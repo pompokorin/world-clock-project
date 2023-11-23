@@ -1,0 +1,59 @@
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+select {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 5px;
+}
+
+.city {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 30px;
+  border-bottom: 1px dashed grey;
+}
+
+.city:last-child {
+  border: none;
+}
+
+.date {
+  opacity: 0.75;
+}
+
+.time {
+  font-size: 28px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.time small {
+  line-height: 28px;
+  vertical-align: middle;
+  font-size: 10px;
+}
+
+footer {
+  text-align: center;
+  padding-top: 30px;
+}
