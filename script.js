@@ -23,6 +23,38 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonTime = moment().tz("Europe/London");
+
+    londonDateElement.innerHTML = londonTime.format("MMMM	Do YYYY");
+    londonTimeElement.innerHTML = londonTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
+  let nyElement = document.querySelector("#newyork");
+  if (nyElement) {
+    let nyDateElement = nyElement.querySelector(".date");
+    let nyTimeElement = nyElement.querySelector(".time");
+    let nyTime = moment().tz("America/New_York");
+
+    nyDateElement.innerHTML = nyTime.format("MMMM	Do YYYY");
+    nyTimeElement.innerHTML = nyTime.format("h:mm:ss [<small>]A[</small>]");
+  }
+
+  let sgElement = document.querySelector("#singapore");
+  if (sgElement) {
+    let sgDateElement = sgElement.querySelector(".date");
+    let sgTimeElement = sgElement.querySelector(".time");
+    let sgTime = moment().tz("Asia/Singapore");
+
+    sgDateElement.innerHTML = sgTime.format("MMMM	Do YYYY");
+    sgTimeElement.innerHTML = sgTime.format("h:mm:ss [<small>]A[</small>]");
+  }
 }
 
 function updateCity(event) {
@@ -43,11 +75,16 @@ function updateCity(event) {
     "A"
   )}</small></div>
   </div>
+  <a href="index.html">Back to all cities</a>
   `;
-}
 
-updateTime();
-setInterval(updateTime, 1000);
+  clearTimeout();
+  setTimeout(() => {
+    updateCity(event);
+  }, 1000);
+}
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
+updateTime();
+setInterval(updateTime, 1000);
